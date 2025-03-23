@@ -2,11 +2,10 @@ package user_service.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import user_service.UserService;
 import user_service.model.Users;
+import user_service.service.UserService;
 import user_service.util.ResponseStructure;
 
 @RequestMapping("/user")

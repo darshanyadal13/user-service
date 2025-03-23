@@ -1,4 +1,4 @@
-package user_service;
+package user_service.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
