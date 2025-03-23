@@ -14,10 +14,11 @@ public class Users {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    private int username;
+    private String username;
     private String password;
     private String email;
     private String role;
     private boolean active;
+
 }
 
