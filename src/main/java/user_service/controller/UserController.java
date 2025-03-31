@@ -6,6 +6,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import user_service.dto.LoginRequest;
 import user_service.model.Users;
+import user_service.service.JWTService;
 import user_service.service.UserService;
 import user_service.util.ResponseStructure;
 
@@ -15,6 +16,9 @@ public class UserController {
     @Autowired
     private UserService userService;
 
+    @Autowired
+    private JWTService jwtService;
+
     @PostMapping("/register")
     public ResponseEntity<ResponseStructure<Users>> register(@RequestBody Users user) {
          ResponseStructure<Users> rs = userService.register(user);
@@ -22,8 +26,7 @@ public class UserController {
     }
 
     @PostMapping("/login")
-    public String login() {
-        System.out.println("Login successfully !!!");
-        return "Login successfully !!!";
+    public String login(@RequestBody LoginRequest loginRequest) {
+        return jwtService.getToken(loginRequest.getUsername());
     }
 }
